@@ -23,7 +23,7 @@ Use this skill for review-only sessions driven by issue context.
 ## Output contract
 
 Always return:
-- issue reference used (`{{ISSUE_PREFIX}}-123` and URL)
+- issue reference used (`DIM-123` and URL)
 - findings ordered by severity (or explicit no-findings)
 - verification evidence summary
 - residual risks/follow-ups

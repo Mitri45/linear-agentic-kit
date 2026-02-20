@@ -14,7 +14,7 @@ Use this skill when a task should run with a manager + specialist workflow inste
 - `orchestrate <ISSUE-ID>`
 - `execute parent issue <ISSUE-ID>`
 
-If the input is an issue ID (for example `{{ISSUE_PREFIX}}-14`), treat it as the root orchestration issue.
+If the input is an issue ID (for example `DIM-14`), treat it as the root orchestration issue.
 
 ## Default operating contract
 

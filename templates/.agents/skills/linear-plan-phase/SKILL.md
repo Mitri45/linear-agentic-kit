@@ -39,7 +39,7 @@ If the request is ambiguous, ask clarification questions first, then continue pl
 ## Output contract
 
 Always return:
-- issue references (`{{ISSUE_PREFIX}}-123` and URL)
+- issue references (`DIM-123` and URL)
 - main issue ID for execution
 - execution routing label set on main issue (`execution-mode:single` or `execution-mode:orchestrated`)
 - decision labels set on main issue (`risk:*`, `scope:*`, `verification:*`)

@@ -34,7 +34,7 @@ Convert generic kit defaults into repo-accurate guidance.
 - No placeholder paths remain (e.g. `<set-client-path>`).
 - Architecture/security docs reflect actual code layout and invariants.
 - Workflow docs contain repo-appropriate lint/test commands using `{{PACKAGE_MANAGER}}`.
-- Skill examples use the repo's issue key style (for example `{{ISSUE_PREFIX}}-123`).
+- Skill examples use the repo's issue key style (for example `DIM-123`).
 
 ## Output contract
 
