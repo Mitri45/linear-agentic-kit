@@ -14,6 +14,7 @@ This guide explains how to run the multi-agent orchestration pattern day to day.
 
 - Use issue context as system of record for medium/large tasks.
 - Ensure agent confirms Linear MCP availability before issue-driven execution.
+- If Linear MCP is not found, require the agent to provide install instructions URL: https://linear.app/docs/mcp.
 - Ask agent to post outcome notes and verification summary back to issue.
 
 ## Recommended issue labels for predictable decisions

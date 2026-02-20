@@ -56,7 +56,7 @@ Use skill agent-kit-repo-adjuster to tailor docs/agent and skills to this reposi
 ## Operating rules for agents applying this kit
 
 1. Do not erase target-repo-specific constraints.
-2. If Linear MCP is missing, stop issue-driven setup and report the gap explicitly.
+2. If Linear MCP is missing, stop issue-driven setup, report the gap explicitly, and point the user to install docs: https://linear.app/docs/mcp.
 3. Keep root `AGENTS.md` concise and routing-focused.
 4. Apply non-destructive updates: append/merge preferred, full replace only when file is absent.
 5. Update architecture/security/quality docs to reflect actual repository reality.

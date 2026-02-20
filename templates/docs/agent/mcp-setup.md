@@ -8,3 +8,4 @@ Document repo-specific MCP requirements here.
 - Authentication prerequisites
 - Known limitations
 - Validation checks to confirm setup
+- Missing MCP fallback: if Linear MCP is unavailable, stop issue-driven flow and provide https://linear.app/docs/mcp
