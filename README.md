@@ -21,7 +21,7 @@ The agent is expected to ask clarification questions when needed, instead of req
 Give your agent this instruction:
 
 ```md
-Read <THIS_REPO_URL>/README.md and apply Linear Agentic Kit to this repository.
+Read https://github.com/Mitri45/linear-agentic-kit/blob/main/README.md and apply Linear Agentic Kit to this repository.
 ```
 
 Then the agent should execute this workflow:
