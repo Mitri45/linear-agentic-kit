@@ -13,6 +13,8 @@ Expected behavior:
 - agent returns a concrete plan and issue-ready breakdown
 - agent sets decision labels on main issue:
   - `execution-mode:*`, `risk:*`, `scope:*`, `verification:*`
+- agent sets hierarchy label on main issue:
+  - `issue-role:top-level` (required so top-level work can be filtered in Linear views)
 - agent adds `done-when` checklist to main issue body
 
 ## Implement from issue
@@ -39,4 +41,11 @@ Execution note:
 ```md
 Use skill agent-kit-repo-adjuster to tailor docs/agent and skills to this repository.
 Then explain to me how to operate this workflow as a human.
+```
+
+## Upgrade an existing kit install
+
+```md
+Use skill agent-kit-updater to upgrade this repository's local kit to the new version non-destructively.
+Then run agent-kit-repo-adjuster and summarize what changed.
 ```

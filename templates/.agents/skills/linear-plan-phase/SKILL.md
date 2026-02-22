@@ -32,9 +32,11 @@ If the request is ambiguous, ask clarification questions first, then continue pl
    - `risk:low` | `risk:medium` | `risk:high`
    - `scope:client` | `scope:server` | `scope:shared` | `scope:fullstack`
    - `verification:standard` | `verification:strict`
-9. Add `done-when` checklist in the main issue body (3-6 concrete acceptance bullets).
-10. Create or update issue(s) with objective, scope, checklist, and dependencies.
-11. Only for exceptional high-risk/audit work, also create a companion exec-plan file under `docs/agent/exec-plans/active/`.
+9. Set issue hierarchy label on the main issue:
+   - `issue-role:top-level` (required for Linear view filtering)
+10. Add `done-when` checklist in the main issue body (3-6 concrete acceptance bullets).
+11. Create or update issue(s) with objective, scope, checklist, and dependencies.
+12. Only for exceptional high-risk/audit work, also create a companion exec-plan file under `docs/agent/exec-plans/active/`.
 
 ## Output contract
 
@@ -43,6 +45,7 @@ Always return:
 - main issue ID for execution
 - execution routing label set on main issue (`execution-mode:single` or `execution-mode:orchestrated`)
 - decision labels set on main issue (`risk:*`, `scope:*`, `verification:*`)
+- issue hierarchy label set on main issue (`issue-role:top-level`)
 - `done-when` checklist added to main issue body
 - selected ticket strategy (single issue vs orchestration parent + children)
 - concise scope summary

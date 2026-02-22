@@ -17,12 +17,19 @@ This guide explains how to run the multi-agent orchestration pattern day to day.
 - If Linear MCP is not found, require the agent to provide install instructions URL: https://linear.app/docs/mcp.
 - Ask agent to post outcome notes and verification summary back to issue.
 
+## Updating kit version in an existing repo
+
+- Ask agent to run `agent-kit-updater` when upgrading the repository to a newer kit version.
+- Require non-destructive merges so repo-specific instructions remain intact.
+- Require a post-update `agent-kit-repo-adjuster` pass.
+
 ## Recommended issue labels for predictable decisions
 
 - `execution-mode:single` | `execution-mode:orchestrated`
 - `risk:low` | `risk:medium` | `risk:high`
 - `scope:client` | `scope:server` | `scope:shared` | `scope:fullstack`
 - `verification:standard` | `verification:strict`
+- `issue-role:top-level` on the main issue (required for Linear list/view filtering)
 
 Also keep a `done-when` checklist in the main issue body (3-6 concrete bullets).
 

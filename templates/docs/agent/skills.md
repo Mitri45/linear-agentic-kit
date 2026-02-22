@@ -7,6 +7,7 @@
 - `linear-review-phase`
 - `linear-mcp-issue-ops`
 - `agent-kit-repo-adjuster`
+- `agent-kit-updater`
 
 ## Internal helper skills
 
@@ -15,3 +16,7 @@
 ## Post-install requirement
 
 Run `agent-kit-repo-adjuster` once after installation to tailor these docs and skills to this repository.
+
+## Post-update requirement
+
+Run `agent-kit-updater` for version upgrades, then run `agent-kit-repo-adjuster` to re-sync repo-specific tailoring.

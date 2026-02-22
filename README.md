@@ -43,10 +43,11 @@ Then the agent should execute this workflow:
 
 To apply a new version of Linear Agentic Kit to an already installed repository:
 
-1. Check the `CHANGELOG.md` in the new kit against the version currently installed in the target repository.
-2. Review the `CHANGELOG.md` to determine which specific files were introduced or modified since the installed version.
-3. Apply updates to **only the touched files** inside the `.agents`, `docs`, and root instructions in the target repository, merging changes non-destructively to preserve local modifications.
-4. Update the stored version in the target repository to match the new kit version.
+1. Run skill `agent-kit-updater` in the target repository.
+2. Check the `CHANGELOG.md` in the new kit against the version currently installed in the target repository.
+3. Review the `CHANGELOG.md` to determine which specific files were introduced or modified since the installed version.
+4. Apply updates to **only the touched files** inside the `.agents`, `docs`, and root instructions in the target repository, merging changes non-destructively to preserve local modifications.
+5. Update the stored version in the target repository to match the new kit version.
 
 ## Required post-install step
 
@@ -54,6 +55,14 @@ Run this prompt in the target repo:
 
 ```md
 Use skill agent-kit-repo-adjuster to tailor docs/agent and skills to this repository.
+```
+
+## Required post-update step
+
+After applying a newer kit version in a target repo:
+
+```md
+Use skill agent-kit-updater to apply this kit version non-destructively, then run agent-kit-repo-adjuster.
 ```
 
 ## Repository layout

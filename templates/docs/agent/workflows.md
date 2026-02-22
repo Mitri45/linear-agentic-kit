@@ -14,6 +14,7 @@
 This enables prompts like: `implement issue DIM-123`.
 
 Linear issues are the default source of truth for plan/execution state.
+Planner should label the main issue as `issue-role:top-level` so it is easy to filter in Linear views.
 Use `docs/agent/exec-plans/` only for exceptional high-risk/audit-heavy work.
 
 ## Handoff template
