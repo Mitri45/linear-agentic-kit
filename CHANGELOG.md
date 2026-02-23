@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2026-02-23
+### Changed
+- Updated `linear-review-phase` skill to require closing the tracked issue after review passes and required changes are committed.
+- Added explicit review output requirement to report closure status (`closed` or `left open`) with rationale.
+
 ## [0.2.0] - 2026-02-22
 ### Added
 - Added `agent-kit-updater` skill to provide a deterministic, non-destructive upgrade workflow for already-installed kits.
