@@ -20,6 +20,18 @@ The agent decides execution mode using issue label first, then structure fallbac
 - single issue: execute directly
 - parent issue with dependencies/children: orchestrate in waves and parallelize by ownership where safe
 
+## GitHub Copilot CLI specific execution rules
+
+Apply this section only when the runtime is GitHub Copilot CLI.
+
+- For orchestrated execution, enable `/fleet` before launching subagents.
+- Use `/tasks` to monitor and wait for subagent completion between waves.
+- Parallelize only `execution-mode:orchestrated` tasks that are both:
+  - in the same dependency wave, and
+  - non-conflicting by ownership/file set.
+- Keep tasks sequential when they touch the same files, same ownership area, or have dependency edges.
+- If `/fleet` is disabled or unavailable, run the same plan sequentially and keep wave gates/review checks unchanged.
+
 ## Required workflow
 
 1. Resolve and read the target issue before coding.

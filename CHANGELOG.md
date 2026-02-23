@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2026-02-23
+### Changed
+- Added GitHub Copilot CLI-specific orchestration guidance to use `/fleet` for parallel subagents and `/tasks` for task monitoring.
+- Added explicit Copilot CLI fallback guidance to execute dependency waves sequentially when fleet mode is unavailable.
+- Clarified that only non-conflicting same-wave work should run in parallel, while same-file or dependency-linked work remains sequential.
+
 ## [0.2.1] - 2026-02-23
 ### Changed
 - Updated `linear-review-phase` skill to require closing the tracked issue after review passes and required changes are committed.

@@ -17,6 +17,16 @@ Linear issues are the default source of truth for plan/execution state.
 Planner should label the main issue as `issue-role:top-level` so it is easy to filter in Linear views.
 Use `docs/agent/exec-plans/` only for exceptional high-risk/audit-heavy work.
 
+## GitHub Copilot CLI runtime note
+
+When this workflow is executed in GitHub Copilot CLI:
+
+- enable `/fleet` for orchestrated parallel subagent runs,
+- use `/tasks` to monitor/wait for active subagents,
+- parallelize only non-conflicting tasks in the same dependency wave,
+- keep same-file and dependency-linked tasks sequential,
+- fallback to sequential wave execution if `/fleet` is disabled or unavailable.
+
 ## Handoff template
 
 ```md

@@ -26,6 +26,10 @@ If the input is an issue ID (for example `DIM-14`), treat it as the root orchest
    - build dependency waves (topological order)
    - execute same-wave issues in parallel when ownership is disjoint
    - gate each wave on reviewer/verifier checks
+   - when running in GitHub Copilot CLI:
+     - enable `/fleet` for same-wave parallel subagents
+     - use `/tasks` to track and wait for subagent completion
+     - if `/fleet` is unavailable, execute the same waves sequentially
 3. Use Linear parent/child issues as the primary orchestration record.
 4. Only for exceptional high-risk/audit/incident cases, create a plan in `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
 5. Decompose by file ownership:
