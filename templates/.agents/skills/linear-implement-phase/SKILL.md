@@ -35,20 +35,23 @@ Apply this section only when the runtime is GitHub Copilot CLI.
 ## Required workflow
 
 1. Resolve and read the target issue before coding.
-2. Derive objective/scope/checklist from issue content.
-3. Resolve execution mode from main issue label `execution-mode:*`; if absent, infer from issue structure.
-4. Read decision labels from main issue:
+2. Derive objective/scope/checklist from issue content and write a compact execution brief.
+3. Apply `docs/agent/harness-efficiency.md` loop: propose -> implement -> verify -> summarize.
+4. Resolve execution mode from main issue label `execution-mode:*`; if absent, infer from issue structure.
+5. Read decision labels from main issue:
    - `risk:*` determines default caution level
    - `scope:*` determines ownership routing boundaries
    - `verification:*` determines verification depth
-5. Keep implementation bounded to issue scope unless explicitly expanded.
-6. Use Linear issue(s) as the primary execution record.
-7. Only for exceptional high-risk/audit/incident cases, create/update `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
-8. Run reviewer pass against `docs/agent/security.md` and `docs/agent/quality.md`.
-9. Run verifier checks and capture command evidence according to `verification:*` label.
-10. Validate completion against the issue `done-when` checklist.
-11. Update issue with outcome notes and verification summary.
-12. If an exec-plan was used, move it to `docs/agent/exec-plans/completed/`.
+6. Keep implementation bounded to issue scope unless explicitly expanded.
+7. Respect safety guardrails from `AGENTS.md` (no `.env*` edits unless requested; no delete-to-fix-lint without approval).
+8. Parallelize only disjoint ownership scopes.
+9. Use Linear issue(s) as the primary execution record.
+10. Only for exceptional high-risk/audit/incident cases, create/update `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
+11. Run reviewer pass against `docs/agent/security.md` and `docs/agent/quality.md`.
+12. Run verifier checks and capture command evidence according to `verification:*` label.
+13. Validate completion against the issue `done-when` checklist.
+14. Update issue with outcome notes and verification summary.
+15. If an exec-plan was used, move it to `docs/agent/exec-plans/completed/`.
 
 ## Verification policy (deterministic)
 

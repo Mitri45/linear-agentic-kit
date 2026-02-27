@@ -83,3 +83,4 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 6. Ensure skill examples and issue references match target issue-key conventions.
 7. Prioritize short prompt UX and ask clarification questions proactively when inputs are ambiguous.
 8. Report residual gaps explicitly if full adaptation cannot be completed.
+9. Carry forward safety guardrails: no `.env*` edits unless requested, no delete-to-fix-lint without approval, and no implicit amend workflows.

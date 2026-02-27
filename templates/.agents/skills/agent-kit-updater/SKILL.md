@@ -40,7 +40,8 @@ Minimal trigger support:
 8. If touched files include templates with placeholders, resolve placeholders to repo-accurate values.
 9. Run `agent-kit-repo-adjuster` after structural updates to ensure docs/skills remain repo-accurate.
 10. Verify no unresolved placeholders remain and no stale skill references exist.
-11. Summarize what changed, what was intentionally left unchanged, and any manual follow-ups.
+11. Verify `docs/agent/harness-efficiency.md` exists and is referenced by workflow/skills docs when present in source version.
+12. Summarize what changed, what was intentionally left unchanged, and any manual follow-ups.
 
 ## Minimum acceptance criteria
 

@@ -5,3 +5,5 @@
 - Verification evidence is required for completion.
 - Keep changes constrained and reversible.
 - Favor existing architecture patterns unless the task requires change.
+- Prefer small verified loops over large one-shot edits.
+- Protect secrets and environment configuration from incidental edits.

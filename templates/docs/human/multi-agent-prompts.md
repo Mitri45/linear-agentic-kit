@@ -23,6 +23,11 @@ Expected behavior:
 linear-implement <ISSUE-ID>
 ```
 
+Expected behavior:
+- agent writes a compact execution brief before code changes
+- agent runs short propose -> implement -> verify loops
+- agent reports verification evidence and residual risks
+
 ## Review from issue
 
 ```md

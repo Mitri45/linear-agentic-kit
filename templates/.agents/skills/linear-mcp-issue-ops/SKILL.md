@@ -13,3 +13,8 @@ Use this skill for planning handoff, issue creation, and issue-driven execution.
 1. No implementation starts before issue context is read.
 2. Every medium/large task maps to at least one issue.
 3. Issue links are recorded in `docs/agent/exec-plans/active/<plan>.md`.
+4. Issue updates include concise execution briefs and verification evidence.
+5. Follow tool routing from `docs/agent/harness-efficiency.md`:
+   - local deterministic tools first
+   - MCP for source-of-truth updates
+   - web research only when required

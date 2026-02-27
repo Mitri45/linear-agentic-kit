@@ -12,14 +12,15 @@ Use this skill for review-only sessions driven by issue context.
 
 1. Resolve and read the target issue.
 2. Gather review scope from objective/scope/checklist.
-3. Review for:
+3. Apply adversarial checks for changed scope:
    - correctness/regressions
    - security/access-control risks
    - compatibility risks
    - missing tests/verification gaps
 4. Validate critical claims with evidence.
-5. Update issue with findings and verification summary.
-6. If review is passed and required changes are committed, close the issue.
+5. Confirm implementer followed `docs/agent/harness-efficiency.md` loop and reported residual risks.
+6. Update issue with findings and verification summary.
+7. If review is passed and required changes are committed, close the issue.
    - confirm acceptance state is explicit (approved/no findings or findings resolved)
    - confirm commit reference(s) are recorded on the issue
    - set issue to a closed/done state in the tracker

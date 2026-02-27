@@ -13,6 +13,10 @@
 
 - `multi-agent-orchestrator` (invoked by agent logic when `linear-implement` detects parent/child orchestration mode)
 
+## Operating reference
+
+- `docs/agent/harness-efficiency.md` defines default prompt/loop/tooling behavior used by all skills.
+
 ## Post-install requirement
 
 Run `agent-kit-repo-adjuster` once after installation to tailor these docs and skills to this repository.

@@ -35,6 +35,7 @@ Keep this file short. It routes to domain-specific guidance.
 - `docs/agent/security.md`
 - `docs/agent/quality.md`
 - `docs/agent/ai-native-team.md`
+- `docs/agent/harness-efficiency.md`
 - `docs/agent/mcp-setup.md`
 - `docs/agent/workflows.md`
 - `docs/agent/skills.md`
@@ -47,6 +48,15 @@ Keep this file short. It routes to domain-specific guidance.
 3. Review against `docs/agent/security.md` and `docs/agent/quality.md`
 4. Validate with lint/tests for changed scope
 5. For exceptional high-risk/audit cases only, use `docs/agent/exec-plans/active/` and close in `docs/agent/exec-plans/completed/`
+
+## Operational guardrails
+
+- Do not edit `.env` files or other secret-bearing local environment files.
+- Do not delete files just to silence lint/type issues without explicit user approval.
+- Keep commits atomic and path-scoped; avoid broad or mixed-purpose commits.
+- Quote git paths in commands when special characters may be present.
+- For rebases, use non-interactive mode (`--no-edit` or explicit non-interactive editor env).
+- Never amend commits unless explicitly requested.
 
 ## Documentation policy
 

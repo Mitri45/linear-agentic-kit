@@ -19,7 +19,8 @@ If the input is an issue ID (for example `DIM-14`), treat it as the root orchest
 ## Default operating contract
 
 1. Follow nearest `AGENTS.md` and `docs/agent/*`.
-2. If input is a root issue:
+2. Start with the manager handoff contract from `docs/agent/harness-efficiency.md`.
+3. If input is a root issue:
    - load parent issue details
    - discover child issues
    - load dependency edges (`blockedBy` / `blocks`)
@@ -30,15 +31,15 @@ If the input is an issue ID (for example `DIM-14`), treat it as the root orchest
      - enable `/fleet` for same-wave parallel subagents
      - use `/tasks` to track and wait for subagent completion
      - if `/fleet` is unavailable, execute the same waves sequentially
-3. Use Linear parent/child issues as the primary orchestration record.
-4. Only for exceptional high-risk/audit/incident cases, create a plan in `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
-5. Decompose by file ownership:
+4. Use Linear parent/child issues as the primary orchestration record.
+5. Only for exceptional high-risk/audit/incident cases, create a plan in `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
+6. Decompose by file ownership:
    - client: `{{CLIENT_PATH}}`
    - server: `{{SERVER_PATH}}`
    - shared: `{{SHARED_PATH}}`
-6. Assign mode per task: `delegate`, `review`, or `own`.
-7. Run reviewer pass against:
+7. Assign mode per task: `delegate`, `review`, or `own`.
+8. Run reviewer pass against:
    - `docs/agent/security.md`
    - `docs/agent/quality.md`
-8. Run verifier checks and capture command evidence.
-9. If formal plan was used, move plan to `docs/agent/exec-plans/completed/`.
+9. Run verifier checks and capture command evidence.
+10. If formal plan was used, move plan to `docs/agent/exec-plans/completed/`.

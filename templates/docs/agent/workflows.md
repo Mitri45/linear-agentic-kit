@@ -1,5 +1,7 @@
 # Multi-Agent Workflows
 
+Default efficiency rules: `docs/agent/harness-efficiency.md`
+
 ## Collaboration pattern
 
 1. Manager defines scope and ownership boundaries.
@@ -8,6 +10,13 @@
 4. Reviewer checks `security.md` and `quality.md`.
 5. Verifier runs checks and reports evidence.
 6. Manager closes with outcomes and follow-ups.
+
+## Efficiency constraints
+
+1. Start each implementation wave with a compact execution brief.
+2. Keep patches small and ownership-disjoint before parallelizing.
+3. Run verification in each wave, not only at final merge.
+4. Use orchestration only when issue structure or risk level requires it.
 
 ## Planner-first issue intake
 

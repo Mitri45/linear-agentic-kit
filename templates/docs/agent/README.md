@@ -10,6 +10,7 @@ This folder defines guardrails, architecture context, and optional fallback arti
 - `security.md`
 - `quality.md`
 - `ai-native-team.md`
+- `harness-efficiency.md`
 - `mcp-setup.md`
 - `workflows.md`
 - `skills.md`

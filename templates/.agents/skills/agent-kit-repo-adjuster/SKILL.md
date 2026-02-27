@@ -20,6 +20,7 @@ Convert generic kit defaults into repo-accurate guidance.
    - `docs/agent/architecture.md`
    - `docs/agent/security.md`
    - `docs/agent/quality.md`
+   - `docs/agent/harness-efficiency.md`
    - `docs/agent/workflows.md`
 3. Update orchestration skills to align examples and constraints:
    - `.agents/skills/multi-agent-orchestrator/SKILL.md`
@@ -34,6 +35,7 @@ Convert generic kit defaults into repo-accurate guidance.
 - No placeholder paths remain (e.g. `<set-client-path>`).
 - Architecture/security docs reflect actual code layout and invariants.
 - Workflow docs contain repo-appropriate lint/test commands using `{{PACKAGE_MANAGER}}`.
+- Harness efficiency docs and references are present and aligned across skills/workflows.
 - Skill examples use the repo's issue key style (for example `DIM-123`).
 
 ## Output contract
