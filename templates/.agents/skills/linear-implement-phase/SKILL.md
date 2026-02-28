@@ -51,7 +51,8 @@ Apply this section only when the runtime is GitHub Copilot CLI.
 12. Run verifier checks and capture command evidence according to `verification:*` label.
 13. Validate completion against the issue `done-when` checklist.
 14. Update issue with outcome notes and verification summary.
-15. If an exec-plan was used, move it to `docs/agent/exec-plans/completed/`.
+15. Update `.agents/latest-work.md` with latest done work, touched files, verification, and next step.
+16. If an exec-plan was used, move it to `docs/agent/exec-plans/completed/`.
 
 ## Verification policy (deterministic)
 
@@ -72,4 +73,5 @@ Always return:
 - changed scope summary
 - verification evidence summary
 - residual risks/follow-ups
+- confirmation that `.agents/latest-work.md` was updated
 - next command hint for user where relevant (for example `linear-review <ISSUE-ID>`)

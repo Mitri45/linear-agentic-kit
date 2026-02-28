@@ -38,6 +38,7 @@ If the request is ambiguous, ask clarification questions first, then continue pl
 11. Add `done-when` checklist in the main issue body (3-6 concrete acceptance bullets).
 12. Create or update issue(s) with objective, scope, checklist, and dependencies.
 13. Only for exceptional high-risk/audit work, also create a companion exec-plan file under `docs/agent/exec-plans/active/`.
+14. Update `.agents/latest-work.md` with planning outcomes and next execution step.
 
 ## Output contract
 
@@ -52,4 +53,5 @@ Always return:
 - concise scope summary
 - execution checklist for implementer
 - explicit blockers/open questions
+- confirmation that `.agents/latest-work.md` was updated
 - next command hint for user: `linear-implement <MAIN-ISSUE-ID>`

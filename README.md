@@ -11,6 +11,7 @@ Humans should be able to run this pattern with short prompts:
 - `linear-plan <feature I want to plan>`
 - `linear-implement <ISSUE-ID>`
 - `linear-review <ISSUE-ID>`
+- `remind me`
 
 The agent is expected to ask clarification questions when needed, instead of requiring humans to provide long structured briefs.
 
@@ -32,7 +33,7 @@ Then the agent should execute this workflow:
 4. Merge `templates/docs/agent/**` into target repo as `docs/agent/**` non-destructively.
 5. Merge `templates/docs/human/**` into target repo as `docs/human/**` non-destructively.
 6. Merge `templates/docs/README.md` into target repo as `docs/README.md` non-destructively.
-7. Merge `templates/.agents/skills/**` into target repo as `.agents/skills/**` non-destructively.
+7. Merge `templates/.agents/**` into target repo as `.agents/**` non-destructively.
 8. Never replace existing instruction files wholesale when they already exist; append or edit-in-place while preserving existing repo rules.
 9. Run skill `agent-kit-repo-adjuster` in the target repo.
 10. Confirm no placeholder values remain (for example `<set-client-path>`).
@@ -72,6 +73,7 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 - `templates/docs/human/`: human-facing runbook and prompt patterns
 - `templates/docs/README.md`: docs routing map for humans and agents
 - `templates/.agents/skills/`: reusable orchestration skills
+- `templates/.agents/latest-work.md`: session handoff memory file used by `remind-me`
 
 ## Operating rules for agents applying this kit
 
@@ -84,3 +86,4 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 7. Prioritize short prompt UX and ask clarification questions proactively when inputs are ambiguous.
 8. Report residual gaps explicitly if full adaptation cannot be completed.
 9. Carry forward safety guardrails: no `.env*` edits unless requested, no delete-to-fix-lint without approval, and no implicit amend workflows.
+10. Keep `.agents/latest-work.md` updated as part of normal plan/implement/review execution.

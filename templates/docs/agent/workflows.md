@@ -9,7 +9,8 @@ Default efficiency rules: `docs/agent/harness-efficiency.md`
 3. Implementers execute disjoint scopes.
 4. Reviewer checks `security.md` and `quality.md`.
 5. Verifier runs checks and reports evidence.
-6. Manager closes with outcomes and follow-ups.
+6. Manager updates `.agents/latest-work.md` with done work and next steps.
+7. Manager closes with outcomes and follow-ups.
 
 ## Efficiency constraints
 

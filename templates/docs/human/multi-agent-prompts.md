@@ -2,6 +2,17 @@
 
 Use short prompts. The agent should ask clarification questions when needed.
 
+## Session reminder
+
+```md
+remind me
+```
+
+Expected behavior:
+- agent reads `.agents/latest-work.md`
+- agent summarizes latest completed work and verification
+- agent lists the next concrete steps
+
 ## Plan a feature
 
 ```md
@@ -27,6 +38,7 @@ Expected behavior:
 - agent writes a compact execution brief before code changes
 - agent runs short propose -> implement -> verify loops
 - agent reports verification evidence and residual risks
+- agent updates `.agents/latest-work.md` with latest done + next steps
 
 ## Review from issue
 

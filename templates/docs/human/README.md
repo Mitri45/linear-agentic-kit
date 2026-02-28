@@ -9,6 +9,7 @@ This guide explains how to run the multi-agent orchestration pattern day to day.
 3. Require review against `docs/agent/security.md` and `docs/agent/quality.md`.
 4. Require verification evidence (commands + pass/fail).
 5. For exceptional high-risk/audit work only, maintain an exec-plan in `docs/agent/exec-plans/` and move it to `completed/` at closure.
+6. Require agent to update `.agents/latest-work.md` so a new session can start with `remind me`.
 
 ## Issue-driven mode (Linear MCP)
 

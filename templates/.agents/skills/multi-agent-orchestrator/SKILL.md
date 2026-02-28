@@ -42,4 +42,5 @@ If the input is an issue ID (for example `DIM-14`), treat it as the root orchest
    - `docs/agent/security.md`
    - `docs/agent/quality.md`
 9. Run verifier checks and capture command evidence.
-10. If formal plan was used, move plan to `docs/agent/exec-plans/completed/`.
+10. Update `.agents/latest-work.md` after each completed wave and at final closure.
+11. If formal plan was used, move plan to `docs/agent/exec-plans/completed/`.

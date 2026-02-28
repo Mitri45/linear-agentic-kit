@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-02-28
+### Added
+- Added `templates/.agents/latest-work.md` as a repo-local session handoff memory file.
+- Added `templates/.agents/skills/remind-me/SKILL.md` to support "remind me" prompts with latest done + next steps output.
+
+### Changed
+- Updated core execution skill templates to require updating `.agents/latest-work.md`:
+  - `linear-plan-phase`
+  - `linear-implement-phase`
+  - `linear-review-phase`
+  - `multi-agent-orchestrator`
+- Updated install/update guidance to manage `.agents/**` (not only `.agents/skills/**`) and keep session memory assets in sync.
+- Updated template docs (`AGENTS.md`, `docs/agent/workflows.md`, `docs/agent/skills.md`, `docs/human/*`) to include session memory and `remind me` usage.
+
 ## [0.3.0] - 2026-02-27
 ### Added
 - Added `templates/docs/agent/harness-efficiency.md` with compact execution-brief, short-loop, and tool-routing guidance.

@@ -30,6 +30,7 @@ Keep this file short. It routes to domain-specific guidance.
 ## Source-of-truth docs
 
 - Linear issue tracker is the primary execution source of truth.
+- `.agents/latest-work.md` is the session handoff memory for "what just changed" and "what is next".
 - `docs/agent/core-beliefs.md`
 - `docs/agent/architecture.md`
 - `docs/agent/security.md`
@@ -47,7 +48,8 @@ Keep this file short. It routes to domain-specific guidance.
 2. Implement with clear file ownership boundaries
 3. Review against `docs/agent/security.md` and `docs/agent/quality.md`
 4. Validate with lint/tests for changed scope
-5. For exceptional high-risk/audit cases only, use `docs/agent/exec-plans/active/` and close in `docs/agent/exec-plans/completed/`
+5. Update `.agents/latest-work.md` with latest done work, evidence, and next steps
+6. For exceptional high-risk/audit cases only, use `docs/agent/exec-plans/active/` and close in `docs/agent/exec-plans/completed/`
 
 ## Operational guardrails
 
@@ -63,3 +65,9 @@ Keep this file short. It routes to domain-specific guidance.
 - Keep root `AGENTS.md` as a router, not a rule dump.
 - Put detailed constraints in the closest domain `AGENTS.md`.
 - Keep docs current; stale instruction files are defects.
+
+## Session memory policy
+
+- Keep `.agents/latest-work.md` updated at the end of each planning/implementation/review session.
+- Treat `.agents/latest-work.md` as the default handoff file for cross-session continuity.
+- When the user asks "remind me", use skill `remind-me`.

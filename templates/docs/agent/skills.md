@@ -8,6 +8,7 @@
 - `linear-mcp-issue-ops`
 - `agent-kit-repo-adjuster`
 - `agent-kit-updater`
+- `remind-me`
 
 ## Internal helper skills
 
@@ -16,6 +17,7 @@
 ## Operating reference
 
 - `docs/agent/harness-efficiency.md` defines default prompt/loop/tooling behavior used by all skills.
+- `.agents/latest-work.md` stores latest done/next-step handoff state for "remind me" flows.
 
 ## Post-install requirement
 

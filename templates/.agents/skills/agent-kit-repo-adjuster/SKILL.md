@@ -29,6 +29,7 @@ Convert generic kit defaults into repo-accurate guidance.
    - `.agents/skills/linear-review-phase/SKILL.md`
 4. Add domain-level `AGENTS.md` files where needed (for example under major app folders).
 5. Validate that required files exist and placeholders are fully resolved.
+6. Ensure `.agents/latest-work.md` exists and `remind-me` skill is installed.
 
 ## Minimum acceptance criteria
 
@@ -37,6 +38,7 @@ Convert generic kit defaults into repo-accurate guidance.
 - Workflow docs contain repo-appropriate lint/test commands using `{{PACKAGE_MANAGER}}`.
 - Harness efficiency docs and references are present and aligned across skills/workflows.
 - Skill examples use the repo's issue key style (for example `DIM-123`).
+- Session memory assets exist (`.agents/latest-work.md` and `.agents/skills/remind-me/SKILL.md`).
 
 ## Output contract
 

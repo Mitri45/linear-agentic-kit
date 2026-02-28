@@ -24,6 +24,7 @@ Use this skill for review-only sessions driven by issue context.
    - confirm acceptance state is explicit (approved/no findings or findings resolved)
    - confirm commit reference(s) are recorded on the issue
    - set issue to a closed/done state in the tracker
+8. Update `.agents/latest-work.md` with review outcome and follow-up actions.
 
 ## Output contract
 
@@ -33,3 +34,4 @@ Always return:
 - verification evidence summary
 - closure status (`closed` or `left open`) with reason
 - residual risks/follow-ups
+- confirmation that `.agents/latest-work.md` was updated

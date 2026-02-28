@@ -33,7 +33,7 @@ Minimal trigger support:
 5. Update only touched kit-managed files:
    - root instructions (`AGENTS.md`)
    - `docs/**`
-   - `.agents/skills/**`
+   - `.agents/**`
    - `VERSION`
 6. Merge non-destructively. Preserve existing repo-specific constraints and local customizations.
 7. Do not replace whole files when targeted edits or append/merge can preserve local guidance.
@@ -41,7 +41,8 @@ Minimal trigger support:
 9. Run `agent-kit-repo-adjuster` after structural updates to ensure docs/skills remain repo-accurate.
 10. Verify no unresolved placeholders remain and no stale skill references exist.
 11. Verify `docs/agent/harness-efficiency.md` exists and is referenced by workflow/skills docs when present in source version.
-12. Summarize what changed, what was intentionally left unchanged, and any manual follow-ups.
+12. Verify `.agents/latest-work.md` and `.agents/skills/remind-me/SKILL.md` are present when available in source version.
+13. Summarize what changed, what was intentionally left unchanged, and any manual follow-ups.
 
 ## Minimum acceptance criteria
 
