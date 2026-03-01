@@ -21,7 +21,7 @@ Default efficiency rules: `docs/agent/harness-efficiency.md`
 
 ## Planner-first issue intake
 
-This enables prompts like: `implement issue DIM-123`.
+This enables prompts like: `implement issue DIM-123` or `linear-implement next`.
 
 Linear issues are the default source of truth for plan/execution state.
 Planner should label the main issue as `issue-role:top-level` so it is easy to filter in Linear views.

@@ -1,7 +1,7 @@
 ---
 name: linear-implement
 description: Use this skill when implementing from issue context with manager-led orchestration.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Issue Implementation Phase
@@ -11,14 +11,28 @@ Use this skill for implementation sessions driven by existing issue context.
 ## Trigger intent (single execution entrypoint)
 
 - `linear-implement <ISSUE-ID>`
+- `linear-implement next`
 
-This is the only user-facing implementation command.
 The agent decides execution mode using issue label first, then structure fallback:
 - label `execution-mode:single`: execute directly
 - label `execution-mode:orchestrated`: orchestrate in waves and parallelize by ownership where safe
 - if label missing: infer from issue structure
 - single issue: execute directly
 - parent issue with dependencies/children: orchestrate in waves and parallelize by ownership where safe
+
+### Next ticket selection logic (`linear-implement next`)
+
+When `linear-implement next` is invoked, the agent must:
+1. Query Linear for issues assigned to `me` in an active development state (e.g., `In Progress`, `Ready for Dev`, `To Do`).
+2. Identify the "next" candidate by applying these filters and sorts in order:
+   - **Unblocked:** Exclude issues with active `blockedBy` relations.
+   - **Priority:** Sort by priority (1=Urgent, 2=High, 3=Normal, 4=Low, 0=None).
+   - **Order:** Use Linear `sortOrder` if available.
+   - **Context:** Check `.agents/latest-work.md` for a previously identified "next step".
+3. Validate the selected issue:
+   - Ensure it has enough context (description, checklist/acceptance criteria).
+   - If context is missing, suggest running `linear-plan <ISSUE-ID>` first.
+4. Proceed with implementation of the validated issue.
 
 ## GitHub Copilot CLI specific execution rules
 

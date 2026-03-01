@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2026-03-02
+### Added
+- Added `linear-implement next` command to the `linear-implement` skill.
+- Added automated next-ticket selection logic based on assignment, status, priority, and dependencies.
+
+### Changed
+- Updated `templates/.agents/skills/linear-implement-phase/SKILL.md` to version 1.1.0 with "next" logic.
+- Updated template docs (`docs/agent/workflows.md`, `docs/agent/skills.md`, `docs/human/multi-agent-prompts.md`) to include `linear-implement next` usage and expected behavior.
+
 ## [0.4.0] - 2026-02-28
 ### Added
 - Added `templates/.agents/latest-work.md` as a repo-local session handoff memory file.
