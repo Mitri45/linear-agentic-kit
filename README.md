@@ -4,6 +4,8 @@ Reference repository for agent operating standards and reusable templates.
 
 This repo is intentionally markdown-first. It is designed to be read by agents and then applied to a target repository.
 
+It now also ships an optional `WORKFLOW.md` template so downstream repos can express the same operating contract in a single repo-owned file for daemonized runners such as Symphony or similar orchestrators. The template is intentionally conservative: placeholder-based, low-concurrency by default, and explicit about keeping runtime config aligned with `AGENTS.md` and `docs/agent/*`.
+
 ## User experience target
 
 Humans should be able to run this pattern with short prompts:
@@ -33,12 +35,19 @@ Then the agent should execute this workflow:
 4. Merge `templates/docs/agent/**` into target repo as `docs/agent/**` non-destructively.
 5. Merge `templates/docs/human/**` into target repo as `docs/human/**` non-destructively.
 6. Merge `templates/docs/README.md` into target repo as `docs/README.md` non-destructively.
-7. Merge `templates/.agents/**` into target repo as `.agents/**` non-destructively.
-8. Never replace existing instruction files wholesale when they already exist; append or edit-in-place while preserving existing repo rules.
-9. Run skill `agent-kit-repo-adjuster` in the target repo.
-10. Confirm no placeholder values remain (for example `<set-client-path>`).
-11. Explain to the human operator how to run this pattern in day-to-day work (plan, execute, review, verify, close), using `docs/human/*`.
-12. Note the installed version from the `VERSION` file so that it can be tracked for future updates.
+7. Merge `templates/WORKFLOW.md` into target repo as `WORKFLOW.md` non-destructively when the target repo wants a repo-owned runtime workflow contract.
+8. Merge `templates/.agents/**` into target repo as `.agents/**` non-destructively.
+9. Never replace existing instruction files wholesale when they already exist; append or edit-in-place while preserving existing repo rules.
+10. Run skill `agent-kit-repo-adjuster` in the target repo.
+11. Confirm no placeholder values remain (for example `<set-client-path>`, `{{LINEAR_PROJECT_SLUG}}`, `{{WORKSPACE_ROOT}}`).
+12. Explain to the human operator how to run this pattern in day-to-day work (plan, execute, review, verify, close), using `docs/human/*`.
+13. Note the installed version from the `VERSION` file so that it can be tracked for future updates.
+
+If `WORKFLOW.md` is installed, the agent should also:
+
+1. Replace `active_states` and `terminal_states` with the target repo's actual Linear state names.
+2. Set `workspace.root` to an operator-owned absolute path outside the repository checkout.
+3. Keep `max_concurrent_agents` conservative until disjoint ownership boundaries are proven in practice.
 
 ## Updating an existing installation
 
@@ -69,6 +78,7 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 ## Repository layout
 
 - `templates/AGENTS.md`: root instruction router template
+- `templates/WORKFLOW.md`: optional repo-owned runtime workflow contract for daemonized orchestrators
 - `templates/docs/agent/`: core operating docs
 - `templates/docs/human/`: human-facing runbook and prompt patterns
 - `templates/docs/README.md`: docs routing map for humans and agents
@@ -87,3 +97,4 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 8. Report residual gaps explicitly if full adaptation cannot be completed.
 9. Carry forward safety guardrails: no `.env*` edits unless requested, no delete-to-fix-lint without approval, and no implicit amend workflows.
 10. Keep `.agents/latest-work.md` updated as part of normal plan/implement/review execution.
+11. If `WORKFLOW.md` is installed, keep it aligned with `AGENTS.md`, `docs/agent/*`, and actual issue-state conventions.

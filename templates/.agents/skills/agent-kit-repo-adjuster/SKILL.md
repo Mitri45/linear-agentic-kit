@@ -17,6 +17,7 @@ Convert generic kit defaults into repo-accurate guidance.
 1. Inspect repository structure and identify real ownership boundaries.
 2. Update these files with concrete paths and technology details:
    - `AGENTS.md`
+   - `WORKFLOW.md` (if installed)
    - `docs/agent/architecture.md`
    - `docs/agent/security.md`
    - `docs/agent/quality.md`
@@ -34,8 +35,10 @@ Convert generic kit defaults into repo-accurate guidance.
 ## Minimum acceptance criteria
 
 - No placeholder paths remain (e.g. `<set-client-path>`).
+- No workflow placeholders remain when `WORKFLOW.md` is installed (for example `{{LINEAR_PROJECT_SLUG}}`, `{{WORKSPACE_ROOT}}`).
 - Architecture/security docs reflect actual code layout and invariants.
 - Workflow docs contain repo-appropriate lint/test commands using `{{PACKAGE_MANAGER}}`.
+- `WORKFLOW.md` states accurate tracker states, workspace root, and runtime guardrails when installed.
 - Harness efficiency docs and references are present and aligned across skills/workflows.
 - Skill examples use the repo's issue key style (for example `DIM-123`).
 - Session memory assets exist (`.agents/latest-work.md` and `.agents/skills/remind-me/SKILL.md`).

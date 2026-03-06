@@ -2,6 +2,8 @@
 
 Default efficiency rules: `docs/agent/harness-efficiency.md`
 
+Optional runtime contract: `WORKFLOW.md`
+
 ## Collaboration pattern
 
 1. Manager defines scope and ownership boundaries.
@@ -24,6 +26,8 @@ Default efficiency rules: `docs/agent/harness-efficiency.md`
 This enables prompts like: `implement issue DIM-123` or `linear-implement next`.
 
 Linear issues are the default source of truth for plan/execution state.
+When `WORKFLOW.md` exists, keep its tracker states, concurrency, and workflow guardrails aligned with these docs.
+Do not treat `WORKFLOW.md` as a substitute for repo-specific instruction files; it is the runtime contract layered under them.
 Planner should label the main issue as `issue-role:top-level` so it is easy to filter in Linear views.
 Use `docs/agent/exec-plans/` only for exceptional high-risk/audit-heavy work.
 

@@ -1,6 +1,7 @@
 # Agent Operating Docs
 
 Linear issue tracker is the primary source of truth for planning/execution.
+`WORKFLOW.md` is the optional runtime contract for daemonized issue runners when present.
 This folder defines guardrails, architecture context, and optional fallback artifacts.
 Session handoff memory lives in `.agents/latest-work.md`.
 

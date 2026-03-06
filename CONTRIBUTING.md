@@ -24,3 +24,4 @@ This repository is a markdown-first kit for agent operating standards and reusab
 1. Check all links and referenced paths exist.
 2. Ensure templates contain no stale project-specific values.
 3. Ensure `agent-kit-repo-adjuster` still covers post-install adaptation.
+4. If `WORKFLOW.md` changes, verify placeholders, state names guidance, and safety expectations still align with `AGENTS.md` and `docs/agent/*`.

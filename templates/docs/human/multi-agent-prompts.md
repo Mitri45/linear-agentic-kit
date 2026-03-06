@@ -2,6 +2,8 @@
 
 Use short prompts. The agent should ask clarification questions when needed.
 
+If the repo uses a daemonized issue runner, keep `WORKFLOW.md` in sync with `AGENTS.md` and `docs/agent/*`.
+
 ## Session reminder
 
 ```md
@@ -40,6 +42,7 @@ Expected behavior:
 - agent runs short propose -> implement -> verify loops
 - agent reports verification evidence and residual risks
 - agent updates `.agents/latest-work.md` with latest done + next steps
+- agent follows `WORKFLOW.md` when that file is installed
 - for `linear-implement next`, agent selects and validates the next ticket based on assignment, status, priority, and dependencies.
 
 ## Review from issue

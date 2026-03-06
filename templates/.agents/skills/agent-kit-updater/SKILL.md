@@ -32,6 +32,7 @@ Minimal trigger support:
 4. Read source `CHANGELOG.md` and identify files touched since installed version.
 5. Update only touched kit-managed files:
    - root instructions (`AGENTS.md`)
+   - `WORKFLOW.md` when present in source or already installed in target
    - `docs/**`
    - `.agents/**`
    - `VERSION`
@@ -42,7 +43,8 @@ Minimal trigger support:
 10. Verify no unresolved placeholders remain and no stale skill references exist.
 11. Verify `docs/agent/harness-efficiency.md` exists and is referenced by workflow/skills docs when present in source version.
 12. Verify `.agents/latest-work.md` and `.agents/skills/remind-me/SKILL.md` are present when available in source version.
-13. Summarize what changed, what was intentionally left unchanged, and any manual follow-ups.
+13. Verify `WORKFLOW.md` remains aligned with repo issue states, placeholders, and safety guardrails when present.
+14. Summarize what changed, what was intentionally left unchanged, and any manual follow-ups.
 
 ## Minimum acceptance criteria
 

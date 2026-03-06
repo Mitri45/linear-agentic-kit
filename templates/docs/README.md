@@ -6,6 +6,7 @@ Use this page to quickly find the right documentation set.
 
 Use these when running and operating the agent orchestration workflow:
 
+- `WORKFLOW.md` (when installed; runtime contract for daemonized runners)
 - `docs/human/README.md`
 - `docs/human/multi-agent-prompts.md`
 
@@ -13,6 +14,7 @@ Use these when running and operating the agent orchestration workflow:
 
 Use these for agent behavior, constraints, and execution model:
 
+- `AGENTS.md`
 - `docs/agent/README.md`
 - `docs/agent/workflows.md`
 - `docs/agent/harness-efficiency.md`

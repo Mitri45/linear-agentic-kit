@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.1] - 2026-03-06
+### Changed
+- Tightened `templates/WORKFLOW.md` defaults and guidance:
+  - removed the noisy default `after_create` hook
+  - added explicit placeholder/operator setup guidance
+  - clarified conservative concurrency and workspace-root expectations
+  - aligned runtime safety expectations with repo instruction files
+- Updated maintainer and operator docs (`templates/docs/README.md`, `templates/docs/agent/mcp-setup.md`, `templates/docs/agent/workflows.md`, `templates/docs/human/README.md`, `CONTRIBUTING.md`, `.github/copilot-instructions.md`) to explain when and how `WORKFLOW.md` should be used.
+
+## [0.5.0] - 2026-03-06
+### Added
+- Added `templates/WORKFLOW.md` as an optional repo-owned runtime workflow contract for daemonized issue runners such as Symphony-style orchestrators.
+
+### Changed
+- Updated install guidance in `README.md` to copy and adapt `WORKFLOW.md` non-destructively when desired.
+- Updated core templates and skills (`templates/AGENTS.md`, `templates/docs/agent/**`, `templates/docs/human/**`, `.agents/skills/agent-kit-repo-adjuster`, `.agents/skills/agent-kit-updater`, `.agents/skills/linear-implement-phase`, `.agents/skills/multi-agent-orchestrator`) to keep `WORKFLOW.md` aligned with repo rules when installed.
+
 ## [0.4.1] - 2026-03-02
 ### Added
 - Added `linear-implement next` command to the `linear-implement` skill.

@@ -18,6 +18,7 @@ When reviewing PRs in this repository:
    - placeholder patterns remain valid where intended (for example `{{CLIENT_PATH}}`)
    - no stale references to removed files/skills
    - instructions remain internally consistent across `AGENTS.md`, `docs/agent/**`, and `.agents/skills/**`
+   - `WORKFLOW.md` stays aligned with `AGENTS.md` and `docs/agent/*` when present
 4. Verify release hygiene for template-affecting changes:
    - `VERSION` updated when appropriate
    - `CHANGELOG.md` documents user-visible template behavior changes

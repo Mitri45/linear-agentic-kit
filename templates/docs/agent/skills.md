@@ -17,6 +17,7 @@
 ## Operating reference
 
 - `docs/agent/harness-efficiency.md` defines default prompt/loop/tooling behavior used by all skills.
+- `WORKFLOW.md` defines the optional repo-owned runtime contract for daemonized issue execution.
 - `.agents/latest-work.md` stores latest done/next-step handoff state for "remind me" flows.
 
 ## Post-install requirement

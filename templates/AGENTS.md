@@ -30,6 +30,7 @@ Keep this file short. It routes to domain-specific guidance.
 ## Source-of-truth docs
 
 - Linear issue tracker is the primary execution source of truth.
+- `WORKFLOW.md` is the optional repo-owned runtime contract for daemonized issue runners when installed.
 - `.agents/latest-work.md` is the session handoff memory for "what just changed" and "what is next".
 - `docs/agent/core-beliefs.md`
 - `docs/agent/architecture.md`
@@ -63,6 +64,7 @@ Keep this file short. It routes to domain-specific guidance.
 ## Documentation policy
 
 - Keep root `AGENTS.md` as a router, not a rule dump.
+- Keep `WORKFLOW.md` aligned with `AGENTS.md` and `docs/agent/*` when the repo uses a daemonized orchestrator.
 - Put detailed constraints in the closest domain `AGENTS.md`.
 - Keep docs current; stale instruction files are defects.
 

@@ -56,6 +56,7 @@ Apply this section only when the runtime is GitHub Copilot CLI.
    - `risk:*` determines default caution level
    - `scope:*` determines ownership routing boundaries
    - `verification:*` determines verification depth
+   - if `WORKFLOW.md` is installed, follow its runtime contract in addition to `AGENTS.md`
 6. Keep implementation bounded to issue scope unless explicitly expanded.
 7. Respect safety guardrails from `AGENTS.md` (no `.env*` edits unless requested; no delete-to-fix-lint without approval).
 8. Parallelize only disjoint ownership scopes.
