@@ -32,8 +32,10 @@ Keep this file short. It routes to domain-specific guidance.
 - Linear issue tracker is the primary execution source of truth.
 - `WORKFLOW.md` is the optional repo-owned runtime contract for daemonized issue runners when installed.
 - `.agents/latest-work.md` is the session handoff memory for "what just changed" and "what is next".
+- `.agents/system-context.md` is the durable implementation memory for shipped capabilities, contracts, and patterns.
 - `docs/agent/core-beliefs.md`
 - `docs/agent/architecture.md`
+- `docs/agent/context-memory.md`
 - `docs/agent/security.md`
 - `docs/agent/quality.md`
 - `docs/agent/ai-native-team.md`
@@ -50,7 +52,8 @@ Keep this file short. It routes to domain-specific guidance.
 3. Review against `docs/agent/security.md` and `docs/agent/quality.md`
 4. Validate with lint/tests for changed scope
 5. Update `.agents/latest-work.md` with latest done work, evidence, and next steps
-6. For exceptional high-risk/audit cases only, use `docs/agent/exec-plans/active/` and close in `docs/agent/exec-plans/completed/`
+6. Update `.agents/system-context.md` when stable capabilities, contracts, or patterns changed
+7. For exceptional high-risk/audit cases only, use `docs/agent/exec-plans/active/` and close in `docs/agent/exec-plans/completed/`
 
 ## Operational guardrails
 
@@ -72,4 +75,6 @@ Keep this file short. It routes to domain-specific guidance.
 
 - Keep `.agents/latest-work.md` updated at the end of each planning/implementation/review session.
 - Treat `.agents/latest-work.md` as the default handoff file for cross-session continuity.
+- Keep `.agents/system-context.md` updated when completed work changes stable downstream assumptions.
+- Rebuild task context from file-backed memory when the conversation becomes noisy or crosses a task boundary.
 - When the user asks "remind me", use skill `remind-me`.

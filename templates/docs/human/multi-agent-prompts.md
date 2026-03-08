@@ -12,6 +12,7 @@ remind me
 
 Expected behavior:
 - agent reads `.agents/latest-work.md`
+- agent reads `.agents/system-context.md` when present
 - agent summarizes latest completed work and verification
 - agent lists the next concrete steps
 
@@ -29,6 +30,7 @@ Expected behavior:
 - agent sets hierarchy label on main issue:
   - `issue-role:top-level` (required so top-level work can be filtered in Linear views)
 - agent adds `done-when` checklist to main issue body
+- agent records `Consumes` / `Produces` / `Preserve` contracts when work depends on upstream slices or establishes downstream contracts
 
 ## Implement from issue
 
@@ -39,9 +41,11 @@ linear-implement next
 
 Expected behavior:
 - agent writes a compact execution brief before code changes
+- agent rebuilds a fresh context pack from issue context, `.agents/system-context.md`, and `.agents/latest-work.md`
 - agent runs short propose -> implement -> verify loops
 - agent reports verification evidence and residual risks
 - agent updates `.agents/latest-work.md` with latest done + next steps
+- agent updates `.agents/system-context.md` when stable capabilities, contracts, or patterns changed
 - agent follows `WORKFLOW.md` when that file is installed
 - for `linear-implement next`, agent selects and validates the next ticket based on assignment, status, priority, and dependencies.
 

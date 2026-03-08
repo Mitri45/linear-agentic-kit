@@ -31,6 +31,7 @@ Convert generic kit defaults into repo-accurate guidance.
 4. Add domain-level `AGENTS.md` files where needed (for example under major app folders).
 5. Validate that required files exist and placeholders are fully resolved.
 6. Ensure `.agents/latest-work.md` exists and `remind-me` skill is installed.
+7. Ensure `.agents/system-context.md` and `docs/agent/context-memory.md` are present and aligned with repo-specific guidance when installed.
 
 ## Minimum acceptance criteria
 
@@ -41,7 +42,8 @@ Convert generic kit defaults into repo-accurate guidance.
 - `WORKFLOW.md` states accurate tracker states, workspace root, and runtime guardrails when installed.
 - Harness efficiency docs and references are present and aligned across skills/workflows.
 - Skill examples use the repo's issue key style (for example `DIM-123`).
-- Session memory assets exist (`.agents/latest-work.md` and `.agents/skills/remind-me/SKILL.md`).
+- Session memory assets exist (`.agents/latest-work.md`, `.agents/system-context.md`, and `.agents/skills/remind-me/SKILL.md`).
+- Context-memory guidance is present and referenced from the installed docs.
 
 ## Output contract
 

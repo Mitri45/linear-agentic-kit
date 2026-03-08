@@ -56,6 +56,7 @@ It is intended for runners such as Symphony or any local orchestrator that polls
 - Follow `AGENTS.md`, nearest domain `AGENTS.md`, and `docs/agent/*`.
 - Treat `WORKFLOW.md` as runtime configuration, not as a replacement for repo-specific instruction files.
 - Treat `.agents/latest-work.md` as session handoff memory.
+- Treat `.agents/system-context.md` as durable implementation memory for cross-slice visibility.
 - Keep edits inside the issue scope unless the issue explicitly expands scope.
 - Respect repo safety rules:
   - no `.env*` edits unless explicitly requested
@@ -70,28 +71,36 @@ It is intended for runners such as Symphony or any local orchestrator that polls
    - scope in / scope out
    - constraints
    - checks
-2. Choose execution mode from issue labels:
+2. Build a fresh context pack from:
+   - issue objective and `done-when`
+   - `.agents/system-context.md`
+   - `.agents/latest-work.md`
+   - nearest `AGENTS.md` and relevant `docs/agent/*`
+   - only the code paths needed for the current issue
+3. Choose execution mode from issue labels:
    - `execution-mode:single`
    - `execution-mode:orchestrated`
    - if no label exists, infer from issue structure
-3. Read decision labels:
+4. Read decision labels:
    - `risk:*`
    - `scope:*`
    - `verification:*`
    - `issue-role:*`
-4. For orchestrated work:
+5. For orchestrated work:
    - parallelize only disjoint ownership/file scopes
    - keep same-file and dependency-linked work sequential
+   - give each wave a fresh context pack instead of accumulated conversation history
    - gate each wave on review and verification
-5. Run reviewer pass against:
+6. Run reviewer pass against:
    - `docs/agent/security.md`
    - `docs/agent/quality.md`
-6. Run verification according to `verification:*`:
+7. Run verification according to `verification:*`:
    - `verification:standard`: changed-scope lint/type-check/tests with pass/fail evidence
    - `verification:strict`: add integration/regression evidence mapped to `done-when`
-7. Post outcome notes and verification summary back to the issue.
-8. Update `.agents/latest-work.md` with latest done work, touched files, verification, and next step.
-9. Release the workspace only according to the orchestrator's terminal-state cleanup policy; do not delete active workspaces opportunistically.
+8. Post outcome notes and verification summary back to the issue.
+9. Update `.agents/latest-work.md` with latest done work, touched files, verification, and next step.
+10. Update `.agents/system-context.md` when stable capabilities, contracts, patterns, or seams changed.
+11. Release the workspace only according to the orchestrator's terminal-state cleanup policy; do not delete active workspaces opportunistically.
 
 ## Handoff state
 

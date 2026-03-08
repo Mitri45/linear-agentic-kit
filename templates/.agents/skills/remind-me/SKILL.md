@@ -17,15 +17,17 @@ Use this skill for fast session re-entry and context recall.
 ## Required workflow
 
 1. Read `.agents/latest-work.md`.
-2. If the file does not exist, create it from `templates/.agents/latest-work.md` shape and bootstrap minimal values from git history/status.
-3. Extract and report:
+2. Read `.agents/system-context.md` when present.
+3. If the file does not exist, create it from `templates/.agents/latest-work.md` shape and bootstrap minimal values from git history/status.
+4. Extract and report:
    - latest completed item(s)
    - files touched
    - verification evidence
    - next steps
    - blockers/risks
-4. If working tree changed after the snapshot timestamp, mention the delta (`git status --short` summary) before returning next steps.
-5. Keep response compact and action-first.
+   - durable capabilities/contracts that matter for the next step when available from `.agents/system-context.md`
+5. If working tree changed after the snapshot timestamp, mention the delta (`git status --short` summary) before returning next steps.
+6. Keep response compact and action-first.
 
 ## Output contract
 

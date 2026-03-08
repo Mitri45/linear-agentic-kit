@@ -12,14 +12,27 @@ Optional runtime contract: `WORKFLOW.md`
 4. Reviewer checks `security.md` and `quality.md`.
 5. Verifier runs checks and reports evidence.
 6. Manager updates `.agents/latest-work.md` with done work and next steps.
-7. Manager closes with outcomes and follow-ups.
+7. Manager updates `.agents/system-context.md` when stable downstream context changed.
+8. Manager closes with outcomes and follow-ups.
 
 ## Efficiency constraints
 
 1. Start each implementation wave with a compact execution brief.
 2. Keep patches small and ownership-disjoint before parallelizing.
 3. Run verification in each wave, not only at final merge.
-4. Use orchestration only when issue structure or risk level requires it.
+4. Give each wave or subagent a fresh context pack instead of accumulated chat history.
+5. Use orchestration only when issue structure or risk level requires it.
+
+## Memory model
+
+- Linear issue(s) remain the planning and execution source of truth.
+- `.agents/latest-work.md` stores tactical handoff state.
+- `.agents/system-context.md` stores durable implementation memory:
+  - shipped capabilities
+  - reusable contracts/interfaces
+  - established patterns
+  - open seams relevant to future work
+- `docs/agent/context-memory.md` defines when and how to refresh context from these files.
 
 ## Planner-first issue intake
 
@@ -30,6 +43,7 @@ When `WORKFLOW.md` exists, keep its tracker states, concurrency, and workflow gu
 Do not treat `WORKFLOW.md` as a substitute for repo-specific instruction files; it is the runtime contract layered under them.
 Planner should label the main issue as `issue-role:top-level` so it is easy to filter in Linear views.
 Use `docs/agent/exec-plans/` only for exceptional high-risk/audit-heavy work.
+For dependency-linked issues, planner should record compact `Consumes`, `Produces`, and `Preserve` contracts in the issue body or execution brief.
 
 ## GitHub Copilot CLI runtime note
 

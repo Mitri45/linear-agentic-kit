@@ -44,4 +44,6 @@ If the input is an issue ID (for example `DIM-14`), treat it as the root orchest
    - `docs/agent/quality.md`
 10. Run verifier checks and capture command evidence.
 11. Update `.agents/latest-work.md` after each completed wave and at final closure.
-12. If formal plan was used, move plan to `docs/agent/exec-plans/completed/`.
+12. Update `.agents/system-context.md` when a completed wave changes stable downstream capabilities, contracts, or patterns.
+13. Give each worker a fresh context pack for its owned scope instead of accumulated manager chat history.
+14. If formal plan was used, move plan to `docs/agent/exec-plans/completed/`.

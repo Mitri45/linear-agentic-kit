@@ -18,6 +18,7 @@ Use these for agent behavior, constraints, and execution model:
 - `docs/agent/README.md`
 - `docs/agent/workflows.md`
 - `docs/agent/harness-efficiency.md`
+- `docs/agent/context-memory.md`
 - `docs/agent/security.md`
 - `docs/agent/quality.md`
 - `docs/agent/mcp-setup.md`

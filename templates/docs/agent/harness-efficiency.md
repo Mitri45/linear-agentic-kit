@@ -21,6 +21,11 @@ This guide turns short prompts into deterministic team behavior.
    - parallelize only disjoint scopes
 5. Verify in the same loop as implementation.
 6. Escalate to orchestration only when issue graph or ownership boundaries require it.
+7. Rebuild context from file-backed memory when a thread becomes noisy:
+   - issue objective and `done-when`
+   - `.agents/system-context.md`
+   - `.agents/latest-work.md`
+   - relevant repo docs and code paths
 
 ## Tool routing policy
 
@@ -49,7 +54,7 @@ Use this compact pattern for implementation sessions:
 ```md
 Goal: <outcome>
 Constraints: <must preserve>
-Context: <file paths and invariants>
+Context: <file paths, invariants, and relevant entries from .agents/system-context.md>
 Plan: <2-5 steps>
 Execute: apply smallest safe patch set
 Verify: run required checks

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2026-03-08
+### Added
+- Added `templates/.agents/system-context.md` as a durable implementation memory ledger for cross-slice visibility.
+- Added `templates/docs/agent/context-memory.md` to define the file-backed memory model, context-refresh rules, and dependency contracts.
+
+### Changed
+- Updated root and workflow templates (`templates/AGENTS.md`, `templates/WORKFLOW.md`, `templates/docs/**`, `templates/docs/human/**`) to distinguish session handoff memory from durable implementation memory.
+- Updated core skills (`linear-plan-phase`, `linear-implement-phase`, `multi-agent-orchestrator`, `remind-me`, `agent-kit-repo-adjuster`, `agent-kit-updater`) to:
+  - read and maintain `.agents/system-context.md`
+  - rebuild fresh context packs from file-backed memory instead of stale chat state
+  - record compact `Consumes` / `Produces` / `Preserve` contracts for dependency-linked work
+
 ## [0.5.1] - 2026-03-06
 ### Changed
 - Tightened `templates/WORKFLOW.md` defaults and guidance:

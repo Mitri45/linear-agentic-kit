@@ -49,25 +49,34 @@ Apply this section only when the runtime is GitHub Copilot CLI.
 ## Required workflow
 
 1. Resolve and read the target issue before coding.
-2. Derive objective/scope/checklist from issue content and write a compact execution brief.
-3. Apply `docs/agent/harness-efficiency.md` loop: propose -> implement -> verify -> summarize.
-4. Resolve execution mode from main issue label `execution-mode:*`; if absent, infer from issue structure.
-5. Read decision labels from main issue:
+2. Read `.agents/system-context.md` and `.agents/latest-work.md` before coding.
+3. Derive objective/scope/checklist from issue content and write a compact execution brief.
+4. Build a fresh context pack for the issue:
+   - objective and `done-when`
+   - `Consumes` / `Produces` / `Preserve` contracts from the issue when present
+   - relevant entries from `.agents/system-context.md`
+   - tactical next-step state from `.agents/latest-work.md`
+   - only the code paths needed for current scope
+5. Apply `docs/agent/harness-efficiency.md` loop: propose -> implement -> verify -> summarize.
+6. Resolve execution mode from main issue label `execution-mode:*`; if absent, infer from issue structure.
+7. Read decision labels from main issue:
    - `risk:*` determines default caution level
    - `scope:*` determines ownership routing boundaries
    - `verification:*` determines verification depth
    - if `WORKFLOW.md` is installed, follow its runtime contract in addition to `AGENTS.md`
-6. Keep implementation bounded to issue scope unless explicitly expanded.
-7. Respect safety guardrails from `AGENTS.md` (no `.env*` edits unless requested; no delete-to-fix-lint without approval).
-8. Parallelize only disjoint ownership scopes.
-9. Use Linear issue(s) as the primary execution record.
-10. Only for exceptional high-risk/audit/incident cases, create/update `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
-11. Run reviewer pass against `docs/agent/security.md` and `docs/agent/quality.md`.
-12. Run verifier checks and capture command evidence according to `verification:*` label.
-13. Validate completion against the issue `done-when` checklist.
-14. Update issue with outcome notes and verification summary.
-15. Update `.agents/latest-work.md` with latest done work, touched files, verification, and next step.
-16. If an exec-plan was used, move it to `docs/agent/exec-plans/completed/`.
+8. Keep implementation bounded to issue scope unless explicitly expanded.
+9. Respect safety guardrails from `AGENTS.md` (no `.env*` edits unless requested; no delete-to-fix-lint without approval).
+10. Parallelize only disjoint ownership scopes.
+11. If the session becomes noisy, crosses a task boundary, or starts leaning on stale chat state, rebuild from the context pack instead of continuing from accumulated conversation history.
+12. Use Linear issue(s) as the primary execution record.
+13. Only for exceptional high-risk/audit/incident cases, create/update `docs/agent/exec-plans/active/YYYYMMDD-<slug>.md`.
+14. Run reviewer pass against `docs/agent/security.md` and `docs/agent/quality.md`.
+15. Run verifier checks and capture command evidence according to `verification:*` label.
+16. Validate completion against the issue `done-when` checklist.
+17. Update issue with outcome notes and verification summary.
+18. Update `.agents/latest-work.md` with latest done work, touched files, verification, and next step.
+19. Update `.agents/system-context.md` when the completed work changed stable capabilities, contracts, patterns, or seams that later work should inherit.
+20. If an exec-plan was used, move it to `docs/agent/exec-plans/completed/`.
 
 ## Verification policy (deterministic)
 
@@ -89,4 +98,5 @@ Always return:
 - verification evidence summary
 - residual risks/follow-ups
 - confirmation that `.agents/latest-work.md` was updated
+- confirmation that `.agents/system-context.md` was updated or explicitly left unchanged
 - next command hint for user where relevant (for example `linear-review <ISSUE-ID>`)

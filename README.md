@@ -84,6 +84,7 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 - `templates/docs/README.md`: docs routing map for humans and agents
 - `templates/.agents/skills/`: reusable orchestration skills
 - `templates/.agents/latest-work.md`: session handoff memory file used by `remind-me`
+- `templates/.agents/system-context.md`: durable implementation memory ledger for cross-slice visibility
 
 ## Operating rules for agents applying this kit
 
@@ -97,4 +98,5 @@ Use skill agent-kit-updater to apply this kit version non-destructively, then ru
 8. Report residual gaps explicitly if full adaptation cannot be completed.
 9. Carry forward safety guardrails: no `.env*` edits unless requested, no delete-to-fix-lint without approval, and no implicit amend workflows.
 10. Keep `.agents/latest-work.md` updated as part of normal plan/implement/review execution.
-11. If `WORKFLOW.md` is installed, keep it aligned with `AGENTS.md`, `docs/agent/*`, and actual issue-state conventions.
+11. Keep `.agents/system-context.md` updated when completed work changes stable downstream capabilities, contracts, or patterns.
+12. If `WORKFLOW.md` is installed, keep it aligned with `AGENTS.md`, `docs/agent/*`, and actual issue-state conventions.

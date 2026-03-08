@@ -10,7 +10,8 @@ This guide explains how to run the multi-agent orchestration pattern day to day.
 4. Require verification evidence (commands + pass/fail).
 5. For exceptional high-risk/audit work only, maintain an exec-plan in `docs/agent/exec-plans/` and move it to `completed/` at closure.
 6. Require agent to update `.agents/latest-work.md` so a new session can start with `remind me`.
-7. If the repo uses a daemonized issue runner, require `WORKFLOW.md` to stay aligned with repo rules and issue states.
+7. Require agent to update `.agents/system-context.md` whenever completed work changes stable capabilities, contracts, or patterns.
+8. If the repo uses a daemonized issue runner, require `WORKFLOW.md` to stay aligned with repo rules and issue states.
 
 ## Issue-driven mode (Linear MCP)
 
@@ -58,5 +59,6 @@ Also keep a `done-when` checklist in the main issue body (3-6 concrete bullets).
 
 - Objective and scope are explicit.
 - In-scope and out-of-scope paths are listed.
+- Upstream `Consumes` and downstream `Produces` contracts are explicit when work is dependency-linked.
 - Required checks are listed.
 - Risks/follow-ups are documented before closure.

@@ -36,9 +36,14 @@ If the request is ambiguous, ask clarification questions first, then continue pl
 10. Set issue hierarchy label on the main issue:
    - `issue-role:top-level` (required for Linear view filtering)
 11. Add `done-when` checklist in the main issue body (3-6 concrete acceptance bullets).
-12. Create or update issue(s) with objective, scope, checklist, and dependencies.
-13. Only for exceptional high-risk/audit work, also create a companion exec-plan file under `docs/agent/exec-plans/active/`.
-14. Update `.agents/latest-work.md` with planning outcomes and next execution step.
+12. For dependency-linked work, add a compact contract to the main issue body or execution brief:
+   - `Consumes`: upstream artifacts/interfaces/invariants this work assumes
+   - `Produces`: artifacts/interfaces/invariants downstream work may rely on
+   - `Preserve`: patterns or contracts that must not regress
+13. Create or update issue(s) with objective, scope, checklist, and dependencies.
+14. Only for exceptional high-risk/audit work, also create a companion exec-plan file under `docs/agent/exec-plans/active/`.
+15. Update `.agents/latest-work.md` with planning outcomes and next execution step.
+16. If planning clarified stable downstream assumptions that are already implemented, update `.agents/system-context.md`; do not record speculative future state there.
 
 ## Output contract
 
@@ -51,7 +56,9 @@ Always return:
 - `done-when` checklist added to main issue body
 - selected ticket strategy (single issue vs orchestration parent + children)
 - concise scope summary
+- dependency contract summary (`Consumes` / `Produces` / `Preserve`) when applicable
 - execution checklist for implementer
 - explicit blockers/open questions
 - confirmation that `.agents/latest-work.md` was updated
+- confirmation whether `.agents/system-context.md` changed
 - next command hint for user: `linear-implement <MAIN-ISSUE-ID>`
